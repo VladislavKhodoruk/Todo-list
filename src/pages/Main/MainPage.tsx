@@ -30,7 +30,6 @@ export const MainPage = () => {
 
     useEffect(() => {
         updateFilteredNotes();
-        console.log('dw');
     }, [notes, selectedTags]);
 
 

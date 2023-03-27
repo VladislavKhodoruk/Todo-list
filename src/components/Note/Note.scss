@@ -61,7 +61,11 @@
           }
 
           &.inactive {
-            opacity: 0.5;
+            .note-icon {
+              & * {
+                fill: $grey;
+              }
+            }
           }
 
           &.done {

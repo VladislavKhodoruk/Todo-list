@@ -54,7 +54,9 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
             setEditMode(false);
         }
         else { //createMode
-            props.noteEvent(NoteEventTypes.Create, props.note.id, inputValue[0].children[0].text, titleValue, props.note.date);
+            if (inputValue[0].children[0].text) {
+                props.noteEvent(NoteEventTypes.Create, props.note.id, inputValue[0].children[0].text, titleValue, props.note.date);
+            }
         }
     }
 

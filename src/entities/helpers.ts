@@ -19,5 +19,8 @@ export function findTags(text: string): string[] {
 
 export const sortTagsBySearch = (tags: string[], text: string): string[] =>
   tags.filter((tag) => tag.toLowerCase().includes(text.toLowerCase())).sort();
-export const subArrInArr = (arr: string[], subArr: string[]): boolean =>
-  subArr.every((e) => arr.includes(e));
+
+export const subArrInArr = (arr: string[], subArr: string[]): boolean => {
+  if (subArr.length) return subArr.some((e) => arr.includes(e));
+  return true;
+};
