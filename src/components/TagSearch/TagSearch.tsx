@@ -21,7 +21,7 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
     useEffect(() => {
         const onClick = (e: any) => {
             if (!(tagsWrapper.current?.contains(e.target) || input.current?.contains(e.target))) {
-                setShowMenu(false)
+                setShowMenu(false);
             }
         };
         document.addEventListener('click', onClick);
@@ -47,6 +47,10 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
         setSelectedTags([...newPinnedTags].sort());
     }
 
+    const unPinAll = (): void => {
+        setSelectedTags([]);
+    }
+
     return (
 
         <div className='tag-search'>
@@ -61,13 +65,17 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
                     }}
                     onClick={() => setShowMenu(true)}
                 ></input>
-                {selectedTags.length > 0 && <div className='tag-search-input-container-tags-wrapper'>
-                    <div className='tag-search-input-container-tags'> {selectedTags.map((tag) => <Tag tag={tag} key={tag} withActions={true} unPin={unPin} />)}</div>
-                </div>}
-                <button type='button' className='tag-search-input-container-button' onClick={() => {
-                    setShowMenu(!showMenu)
-                    setTags(sortTagsBySearch(props.tags, inputValue));
-                }}>
+                {selectedTags.length > 0 &&
+                    <div className='tag-search-input-container-tags-wrapper'>
+                        <div className='tag-search-input-container-tags'>
+                            {selectedTags.map((tag) => <Tag tag={tag} key={tag} withActions={true} unPin={unPin} />)}
+                        </div>
+                    </div>}
+                <button
+                    type='button'
+                    className={classNames('tag-search-input-container-close-button', { 'disable': !selectedTags.length })}
+                    onClick={() => { unPinAll() }}>
+                    <Icon className='tag-search-input-container-close-button-icon' icon="maki:cross" />
                 </button>
             </div>
             {showMenu && <div ref={tagsWrapper} className='tags-wrapper'><div className='tag-search-tags'>
