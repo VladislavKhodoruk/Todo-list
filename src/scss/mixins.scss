@@ -1,0 +1,23 @@
+@mixin flex($align, $justify, $gap: 0) {
+  display:flex;
+  gap:$gap;
+  align-items:$align;
+  justify-content:$justify;
+}
+
+@mixin space-between {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+@mixin center {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+@mixin column {
+  display:flex;
+  flex-direction:column;
+}

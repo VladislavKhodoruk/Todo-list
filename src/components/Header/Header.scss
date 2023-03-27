@@ -1,0 +1,7 @@
+@import "../../scss/vars/variables.scss";
+@import "../../scss/mixins.scss";
+
+.header {
+  @include center;
+  padding-top: 1.5rem;
+}

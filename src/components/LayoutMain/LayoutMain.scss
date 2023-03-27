@@ -1,0 +1,11 @@
+@import "../../scss/vars/variables.scss";
+.layout-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  height: 83%;
+  .outlet {
+    height: 100%;
+    width: 100%;
+  }
+}

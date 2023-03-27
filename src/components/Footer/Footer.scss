@@ -1,0 +1,16 @@
+@import "../../scss/vars/variables.scss";
+.footer {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  padding: 1rem;
+  border-top: 1px solid $light;
+  p {
+    font: $font-l;
+    color: $black;
+  }
+  div {
+    display: flex;
+    gap: 1.7rem;
+  }
+}

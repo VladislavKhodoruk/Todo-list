@@ -1,0 +1,46 @@
+
+{
+    "notes": [
+        {
+        "id": "f8ae044f-078b-4d68-a40d-af18901da197", 
+        "date": "2012-01-26T13:51:50.417Z",
+        "title": "Shopping",
+        "description": "Buy apples, #milk, meat, #flour",
+        "tags": ["milk", "flour"],
+        "done": false
+        },
+           {
+        "id": "f8ae044f-078b-4d68-a40d-af18901da198", 
+        "date": "2012-01-27T13:51:50.417Z",
+        "title": "Do exercises",
+        "description": "push ups, pull ups, #cycling",
+        "tags": ["cycling"],
+        "done": false
+        },
+        {
+        "id": "f8ae044f-078b-4d68-a40d-af18901da136", 
+        "date": "2012-01-28T13:51:50.417Z",
+        "title": "Listen to new authors",
+        "description": "#Queen, #SOAD, #SLIPKNOT, #SABATON, Linkin park, #POWERWOLF",
+        "tags": ["powerwolf", "queen", "sabaton", "slipknot", "soad"],
+        "done": true
+        },
+           {
+        "id": "f8ae044f-078b-4d68-a40d-af18901da106", 
+        "date": "2012-01-29T13:51:50.417Z",
+        "title": "cook dinner",
+        "description": "Dish: pie; Products: #milk, #flour, #sugar, eggs, #jam",
+        "tags": ["milk", "flour", "sugar", "jam"],
+        "done": false
+        },
+               {
+        "id": "f8ae044f-078b-4d68-a40d-af18901da406", 
+        "date": "2012-01-27T13:42:50.417Z",
+        "title": "",
+        "description": "Note without title and tags",
+        "tags": [],
+        "done": false
+        }
+    ],
+    "tags": [ "cycling", "flour ", "jam", "milk", "powerwolf", "queen", "sabaton", "slipknot", "soad", "sugar" ]
+}

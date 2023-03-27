@@ -1,0 +1,207 @@
+@import "../../scss/vars/variables.scss";
+@import "../../scss/mixins.scss";
+
+.note {
+  @include column;
+  gap: 0.5rem;
+  height: 22rem;
+  width: 22rem;
+  padding: 1rem 1rem 0.4rem 1rem;
+  border-radius: 0.7rem;
+  background: $white;
+  box-shadow: $note-shadow;
+  color: $black;
+
+  &-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 1.5rem;
+
+    &-date {
+      font: $font-s;
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &-item {
+        @include center;
+        background: none;
+        cursor: pointer;
+
+        &:first-of-type {
+          margin-right: -0.1rem;
+        }
+
+        .note-icon {
+          & * {
+            fill: $grey;
+          }
+        }
+
+        &-done {
+          height: 1.125rem;
+          width: 1.125rem;
+
+          .note-icon {
+            height: 1.25rem;
+            width: 1.25rem;
+          }
+
+          &:hover,
+          &.active {
+            .note-icon {
+              & * {
+                fill: $green;
+              }
+            }
+          }
+
+          &.inactive {
+            opacity: 0.5;
+          }
+
+          &.done {
+            margin-right: 0.1rem;
+            border-radius: 50%;
+            background-color: $green;
+            opacity: 0.8;
+            .note-icon {
+              & * {
+                fill: $white;
+              }
+            }
+          }
+        }
+
+        &-edit {
+          .note-icon {
+            height: 1rem;
+            width: 1rem;
+          }
+
+          &:hover,
+          &.active {
+            .note-icon {
+              & * {
+                fill: $blue;
+              }
+            }
+          }
+        }
+
+        &-delete {
+          .note-icon {
+            height: 1rem;
+            width: 1rem;
+          }
+
+          &:hover {
+            .note-icon {
+              & * {
+                fill: $red;
+              }
+            }
+          }
+        }
+
+        &-cancel {
+          .note-icon {
+            height: 1rem;
+            width: 1rem;
+          }
+
+          &.active {
+            .note-icon {
+              & * {
+                fill: $red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    height: 1px;
+    width: 100%;
+    background: $light;
+    opacity: 0.5;
+  }
+
+  &-bottom {
+    @include column;
+    justify-content: space-between;
+    height: 100%;
+
+    &-content {
+      @include column;
+      gap: 0.5rem;
+
+      &-title {
+        color: $orange-dark;
+        font: $font-xl-b;
+
+        &-input {
+          width: 100%;
+          border-radius: 0.3rem;
+          padding: 0.3rem 0.5rem;
+          font: $font-xl-b;
+          color: $orange-dark;
+          box-shadow: $textarea-shadow;
+        }
+      }
+      &-text {
+        max-height: 13rem;
+        padding-right: 0.25rem;
+        font: $font-m;
+        overflow-y: auto;
+        word-break: break-word;
+
+        &-input {
+          height: 13rem;
+          padding-right: 0.25rem;
+          border-radius: 0.3rem;
+          padding: 0.5rem;
+          box-shadow: $textarea-shadow;
+
+          .input {
+            height: 100%;
+            width: 100%;
+            font: $font-m;
+            outline: none;
+            overflow-y: auto;
+            resize: none;
+
+            .highlighted {
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+
+    &-tags {
+      @include column;
+      height: 3.95rem;
+
+      &-container {
+        display: flex;
+        gap: 0.5rem;
+        padding-bottom: 0.35rem;
+        overflow-x: auto;
+      }
+    }
+  }
+
+  &.disabled {
+    .note-top-date,
+    .note-bottom {
+      opacity: 0.4;
+    }
+  }
+}

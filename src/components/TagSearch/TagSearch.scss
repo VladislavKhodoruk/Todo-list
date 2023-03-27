@@ -1,0 +1,136 @@
+@import "../../scss/vars/variables.scss";
+@import "../../scss/mixins.scss";
+
+.tag-search {
+  width: 100%;
+  display: flex;
+  position: relative;
+
+  &-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 3rem;
+    width: 100%;
+    padding: 0 1.1rem;
+    box-shadow: $note-shadow;
+    border-radius: 0.3rem;
+    background-color: $white;
+    font: $font-m;
+    overflow: hidden;
+
+    &.remove-borders {
+      border-top-left-radius: 0.3rem;
+      border-top-right-radius: 0.3rem;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &-search-icon {
+      min-height: 1.125rem;
+      min-width: 1.125rem;
+      margin-right: 0.6rem;
+
+      * {
+        color: $grey;
+      }
+    }
+
+    &-input {
+      width: 100%;
+      font: $font-m;
+      color: $grey;
+      caret-color: $note-shadow;
+      outline: none;
+      border: none;
+      transition: 0.3s;
+
+      .short {
+        width: 50%;
+      }
+
+      &::-webkit-input-placeholder {
+        color: $grey;
+      }
+
+      &:-moz-placeholder {
+        color: $grey;
+      }
+
+      &::-moz-placeholder {
+        color: $grey;
+      }
+
+      &:-ms-input-placeholder {
+        color: $grey;
+      }
+    }
+
+    &-tags-wrapper {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      padding: 0.3rem;
+    }
+
+    &-tags {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      overflow-x: auto;
+    }
+
+    &-button {
+      @include center;
+      background: none;
+      &-icon {
+        height: 2rem;
+        width: 2rem;
+        transition: 0.2s;
+
+        * {
+          color: $grey;
+        }
+
+        &:hover {
+          * {
+            color: $light-black;
+          }
+        }
+
+        &.active {
+          rotate: 180deg;
+        }
+      }
+    }
+  }
+
+  .tags-wrapper {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 101%;
+    padding: 1rem;
+    background: $white;
+    box-shadow: $note-shadow;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    max-height: 10.5rem;
+    z-index: 1;
+    min-height: 2.5rem;
+
+    .tag-search-tags {
+      width: 100%;
+      overflow-y: auto;
+
+      .tag {
+        margin: 0.3rem;
+        float: left;
+      }
+    }
+  }
+}

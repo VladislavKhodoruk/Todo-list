@@ -1,0 +1,49 @@
+@import "../../scss/vars/variables.scss";
+@import "../../scss/mixins.scss";
+
+.tag {
+  display: flex;
+  gap: 0.2rem;
+  height: fit-content;
+  width: fit-content;
+  max-width: 5rem;
+  border-radius: 0.3rem;
+  border: 1px solid $orange;
+  padding: 0.3rem 0.3rem;
+  background: $white;
+  color: $black;
+  font: $font-xs-b;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  text-align: center;
+
+  &.with-close-button {
+    max-width: 5.9rem;
+  }
+
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-button {
+    @include center;
+    background: none;
+
+    &-icon {
+      width: 0.7rem;
+      height: 0.7rem;
+
+      * {
+        fill: $grey;
+      }
+
+      &:hover {
+        * {
+          fill: $light-black;
+        }
+      }
+    }
+  }
+}

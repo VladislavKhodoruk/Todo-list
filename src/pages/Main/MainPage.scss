@@ -1,0 +1,50 @@
+@import "../../scss/vars/variables.scss";
+@import "../../scss/mixins.scss";
+
+.main {
+  @include column;
+  height: 100%;
+  width: 100%;
+
+  &-topbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      height: 3rem;
+      min-width: 3rem;
+      border-radius: 50%;
+      background-color: $blue;
+
+      &-icon {
+        height: 1.125rem;
+        width: 1.125rem;
+
+        * {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  .notes-wrapper {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      background-color: $light-blue;
+    }
+  }
+
+  .notes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 1.3rem;
+    grid-column-gap: 0.5rem;
+  }
+}
