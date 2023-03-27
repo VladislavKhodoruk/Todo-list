@@ -49,29 +49,28 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
 
     return (
 
-        <div className="tag-search">
-            <div ref={input} className={classNames("tag-search-input-container", { 'remove-borders': showTags })}>
-                <Icon className="tag-search-input-container-search-icon" icon="tabler:search" />
+        <div className='tag-search'>
+            <div ref={input} className={classNames('tag-search-input-container', { 'remove-borders': showTags })}>
+                <Icon className='tag-search-input-container-search-icon' icon='tabler:search' />
                 <input
-
                     type='text'
                     placeholder='Search by tag…'
-                    className={classNames("tag-search-input-container-input", { 'short': selectedTags.length > 0 })}
+                    className={classNames('tag-search-input-container-input', { 'short': selectedTags.length > 0 })}
                     onKeyUp={(e) => {
                         setInputValue((e.target as HTMLInputElement).value)
                     }}
                 ></input>
-                {selectedTags.length > 0 && <div className="tag-search-input-container-tags-wrapper">
-                    <div className="tag-search-input-container-tags"> {selectedTags.map((tag) => <Tag tag={tag} withActions={true} unPin={unPin} />)}</div>
+                {selectedTags.length > 0 && <div className='tag-search-input-container-tags-wrapper'>
+                    <div className='tag-search-input-container-tags'> {selectedTags.map((tag) => <Tag tag={tag} withActions={true} unPin={unPin} />)}</div>
                 </div>}
                 <button type='button' className='tag-search-input-container-button' onClick={() => {
                     setShowTags(!showTags)
                     setTags(sortTagsBySearch(props.tags, inputValue));
                 }}>
-                    <Icon className={classNames("tag-search-input-container-button-icon", { 'active': showTags })} icon="ic:round-keyboard-arrow-down" />
+                    <Icon className={classNames('tag-search-input-container-button-icon', { 'active': showTags })} icon='ic:round-keyboard-arrow-down' />
                 </button>
             </div>
-            {showTags && <div className="tags-wrapper"><div ref={tagsWrapper} className="tag-search-tags">
+            {showTags && <div ref={tagsWrapper} className='tags-wrapper'><div className='tag-search-tags'>
                 {tags.map((tag) => <Tag tag={tag} withActions={true} pin={pin} />)}
             </div></div>}
         </div>

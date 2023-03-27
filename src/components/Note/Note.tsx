@@ -41,7 +41,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
     const [titleValue, setTitleValue] = useState<string>(props.note.title);
     const [inputValue, setInputValue] = useState([
         {
-            type: "paragraph",
+            type: 'paragraph',
             children: [{ text: props.note.description }],
         }
     ]);
@@ -61,7 +61,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
     const cancel = () => {
         if (editMode) {
             setInputValue([{
-                type: "paragraph",
+                type: 'paragraph',
                 children: [{ text: props.note.description }],
             }]);
             setTitleValue(props.note.title);
@@ -89,54 +89,54 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                 <div className='note-top-buttons'>
                     {editMode || props.createMode ?
                         <>
-                            <Tooltip title={editMode ? 'finish editing' : 'finish creating'} placement="top">
+                            <Tooltip title='save' placement='top'>
                                 <button
                                     type='button'
                                     className={classNames('note-top-buttons-item note-top-buttons-item-done', 'active', { 'inactive': !(inputValue[0].children[0].text) })}
                                     onClick={() => saveNote()}
                                 >
-                                    <Icon className={classNames('note-icon')} icon="material-symbols:done-rounded" />
+                                    <Icon className={classNames('note-icon')} icon='material-symbols:done-rounded' />
                                 </button>
                             </Tooltip>
-                            <Tooltip title={editMode ? 'cancel editing' : 'cancel creating'} placement="top">
+                            <Tooltip title='cancel' placement='top'>
                                 <button
                                     type='button'
                                     onClick={() => cancel()}
                                     className={classNames('note-top-buttons-item note-top-buttons-item-cancel', 'active')}
                                 >
-                                    <Icon className='note-icon' icon="radix-icons:cross-2" />
+                                    <Icon className='note-icon' icon='radix-icons:cross-2' />
                                 </button>
                             </Tooltip>
                         </>
                         :
                         <>
-                            <Tooltip title={props.note.done ? 'mark as undone' : 'mark as done'} placement="top">
+                            <Tooltip title={props.note.done ? 'mark as incomplete' : 'mark as complete'} placement='top'>
                                 <button
                                     type='button'
                                     onClick={() => changeNoteStatus()}
                                     className={classNames('note-top-buttons-item note-top-buttons-item-done', { 'done': props.note.done })}
                                 >
-                                    <Icon className='note-icon' icon="material-symbols:done-rounded" />
+                                    <Icon className='note-icon' icon='material-symbols:done-rounded' />
                                 </button>
                             </Tooltip>
 
                             {!props.note.done &&
-                                <Tooltip title='edit' placement="top">
+                                <Tooltip title='edit' placement='top'>
                                     <button
                                         type='button'
                                         onClick={() => setEditMode(!editMode)}
                                         className={classNames('note-top-buttons-item note-top-buttons-item-edit', { 'active': editMode })}
                                     >
-                                        <Icon className='note-icon' icon="material-symbols:edit" />
+                                        <Icon className='note-icon' icon='material-symbols:edit' />
                                     </button>
                                 </Tooltip>}
-                            <Tooltip title='delete' placement="top">
+                            <Tooltip title='delete' placement='top'>
                                 <button
                                     type='button'
                                     onClick={() => deleteNote()}
                                     className='note-top-buttons-item note-top-buttons-item-delete'
                                 >
-                                    <Icon className='note-icon' icon="ph:trash-simple-bold" />
+                                    <Icon className='note-icon' icon='ph:trash-simple-bold' />
                                 </button>
                             </Tooltip>
                         </>
@@ -148,7 +148,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                     <div className='note-bottom-content'>
                         <input
                             type='text'
-                            className="note-bottom-content-title-input"
+                            className='note-bottom-content-title-input'
                             value={titleValue}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitleValue(e.target.value)} />
                         <div className='note-bottom-content-text-input'>
@@ -161,7 +161,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                                 <Editable
                                     decorate={decorate}
                                     renderLeaf={Leaf}
-                                    className="input"
+                                    className='input'
                                 />
                             </Slate>
                         </div>
@@ -183,7 +183,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                     {props.note.tags.sort().map((tag) => <Tag tag={tag} />)}
                 </div>
             </div>
-        </div>
+        </div >
 
     );
 }

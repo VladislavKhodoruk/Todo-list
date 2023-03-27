@@ -17,7 +17,7 @@ export const MainPage = () => {
     const [tags, setTags] = useState<string[]>(JSON.parse(localStorage.getItem('tags')!));
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
     const [createMode, setCreateMode] = useState<boolean>(false);
-    const notesContainer = useRef<HTMLDivElement>(document.createElement("div"));
+    const notesContainer = useRef<HTMLDivElement>(document.createElement('div'));
 
     useEffect(() => {
         if (!JSON.parse(localStorage.getItem('notes')!)) {
@@ -102,11 +102,11 @@ export const MainPage = () => {
 
     return (
         <div className='main'>
-            <div className="main-topbar">
+            <div className='main-topbar'>
                 <TagSearch tags={tags} tagsSelected={setSelectedTags}></TagSearch>
-                <Tooltip title='new note' placement='bottom'>
-                    <button type='button' className="main-topbar-button" onClick={() => addNote()}>
-                        <Icon className="main-topbar-button-icon" icon="ph:plus-bold" />
+                <Tooltip title='add note' placement='bottom'>
+                    <button type='button' className='main-topbar-button' onClick={() => addNote()}>
+                        <Icon className='main-topbar-button-icon' icon='ph:plus-bold' />
                     </button>
                 </Tooltip>
             </div>
