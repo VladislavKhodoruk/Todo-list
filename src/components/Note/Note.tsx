@@ -45,9 +45,8 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
             children: [{ text: props.note.description }],
         }
     ]);
-
     const [error, setError] = useState<boolean>(false);
-    const [inputOnFocus, setInputOnFocus] = useState<boolean>(false);
+    const [inputOnFocus, setInputOnFocus] = useState<boolean>(true);
 
     useEffect(() => {
         if (!inputValue[0].children[0].text.length && !inputOnFocus) {
@@ -102,7 +101,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                 <div className='note-top-buttons'>
                     {editMode || props.createMode ?
                         <>
-                            <Tooltip title='save' placement='top'>
+                            <Tooltip title='Save' placement='top'>
                                 <button
                                     type='button'
                                     className={classNames('note-top-buttons-item note-top-buttons-item-done', 'active', { 'inactive': !(inputValue[0].children[0].text) })}
@@ -111,7 +110,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                                     <Icon className={classNames('note-icon')} icon='material-symbols:done-rounded' />
                                 </button>
                             </Tooltip>
-                            <Tooltip title='cancel' placement='top'>
+                            <Tooltip title='Cancel' placement='top'>
                                 <button
                                     type='button'
                                     onClick={() => cancel()}
@@ -123,7 +122,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                         </>
                         :
                         <>
-                            <Tooltip title={props.note.done ? 'mark as incomplete' : 'mark as complete'} placement='top'>
+                            <Tooltip title={props.note.done ? 'Mark as incomplete' : 'Mark as complete'} placement='top'>
                                 <button
                                     type='button'
                                     onClick={() => changeNoteStatus()}
@@ -132,9 +131,8 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                                     <Icon className='note-icon' icon='material-symbols:done-rounded' />
                                 </button>
                             </Tooltip>
-
                             {!props.note.done &&
-                                <Tooltip title='edit' placement='top'>
+                                <Tooltip title='Edit' placement='top'>
                                     <button
                                         type='button'
                                         onClick={() => setEditMode(!editMode)}
@@ -143,7 +141,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                                         <Icon className='note-icon' icon='material-symbols:edit' />
                                     </button>
                                 </Tooltip>}
-                            <Tooltip title='delete' placement='top'>
+                            <Tooltip title='Delete' placement='top'>
                                 <button
                                     type='button'
                                     onClick={() => deleteNote()}

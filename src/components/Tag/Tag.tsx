@@ -1,10 +1,12 @@
 import { Icon } from '@iconify/react';
 import classNames from 'classnames';
+import Tooltip from '@mui/material/Tooltip';
+
 import './Tag.scss';
 
 export const Tag = (props: { tag: string, withActions?: boolean, unPin?: (tag: string) => void, pin?: (tag: string) => void }) => {
     return (
-        <>{props.withActions ? <div
+        <Tooltip title={props.tag.charAt(0).toUpperCase() + props.tag.slice(1)} placement='bottom'>{props.withActions ? <div
             onClick={() => {
                 if (props.pin) {
                     props.pin!(props.tag)!
@@ -27,7 +29,6 @@ export const Tag = (props: { tag: string, withActions?: boolean, unPin?: (tag: s
             <div className='tag' >
                 <p>{props.tag}</p>
             </div>
-        }</>
-
+        }</Tooltip>
     )
 };

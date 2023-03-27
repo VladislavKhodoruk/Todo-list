@@ -10,7 +10,6 @@ import './MainPage.scss';
 import { NoteEventTypes } from '../../entities/enums';
 import { TagSearch } from '../../components/TagSearch';
 
-
 export const MainPage = () => {
     const [notes, setNotes] = useState<NoteInterface[]>(JSON.parse(localStorage.getItem('notes')!));
     const [filteredNotes, setFilteredNotes] = useState<NoteInterface[]>(JSON.parse(localStorage.getItem('notes')!));
@@ -104,7 +103,7 @@ export const MainPage = () => {
         <div className='main'>
             <div className='main-topbar'>
                 <TagSearch tags={tags} tagsSelected={setSelectedTags}></TagSearch>
-                <Tooltip title='add note' placement='bottom'>
+                <Tooltip title='Add note' placement='bottom'>
                     <button type='button' className='main-topbar-button' onClick={() => addNote()}>
                         <Icon className='main-topbar-button-icon' icon='ph:plus-bold' />
                     </button>
