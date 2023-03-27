@@ -30,6 +30,7 @@
   &-button {
     @include center;
     background: none;
+    cursor: pointer;
 
     &-icon {
       width: 0.7rem;
