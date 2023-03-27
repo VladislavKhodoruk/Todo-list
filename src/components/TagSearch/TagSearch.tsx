@@ -16,7 +16,6 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
 
     useEffect(() => {
         props.tagsSelected!(selectedTags);
-
     }, [selectedTags]);
 
     useEffect(() => {
@@ -47,6 +46,7 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
         let newPinnedTags = selectedTags.filter((curTag: string) => curTag !== tag);
         setSelectedTags([...newPinnedTags].sort());
     }
+
     return (
 
         <div className="tag-search">

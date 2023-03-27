@@ -11,7 +11,7 @@ export function findTags(text: string): string[] {
   }
 
   const uniqueHashtags = hashtags.filter(function (item, pos) {
-    return hashtags.indexOf(item) == pos;
+    return hashtags.indexOf(item) === pos;
   });
 
   return uniqueHashtags;

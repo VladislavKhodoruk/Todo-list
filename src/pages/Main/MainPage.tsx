@@ -79,7 +79,7 @@ export const MainPage = () => {
         }
         newTags = findTags(newNotes.map((note) => note.description).join(' '));
         const uniqueNewTags = newTags.filter(function (item, pos) {
-            return newTags.indexOf(item) == pos;
+            return newTags.indexOf(item) === pos;
         })
         localStorage.setItem('notes', JSON.stringify(newNotes));
         localStorage.setItem('tags', JSON.stringify(uniqueNewTags));
