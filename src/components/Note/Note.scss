@@ -176,6 +176,10 @@
           padding: 0.5rem;
           box-shadow: $textarea-shadow;
 
+          &.error {
+            border: 1px solid $red;
+          }
+
           .input {
             height: 100%;
             width: 100%;

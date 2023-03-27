@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { DATE_FORMAT, HASHTAG_REGEX } from '../../entities/constants';
 import { Note as NoteInterface } from '../../entities/interfaces';
 import { Icon } from '@iconify/react';
@@ -45,6 +45,19 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
             children: [{ text: props.note.description }],
         }
     ]);
+
+    const [error, setError] = useState<boolean>(false);
+    const [inputOnFocus, setInputOnFocus] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (!inputValue[0].children[0].text.length && !inputOnFocus) {
+            setError(true);
+        }
+        else {
+            setError(false);
+        }
+    }, [inputValue, inputOnFocus]);
+
 
     const editor = useMemo(() => withReact(createEditor()), []);
 
@@ -151,12 +164,11 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                             className='note-bottom-content-title-input'
                             value={titleValue}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitleValue(e.target.value)} />
-                        <div className='note-bottom-content-text-input'>
+                        <div onFocus={() => setInputOnFocus(true)} onBlur={() => setInputOnFocus(false)} className={classNames('note-bottom-content-text-input', { 'error': error })}>
                             <Slate
                                 editor={editor}
                                 value={inputValue}
                                 onChange={setInputValue as any}
-
                             >
                                 <Editable
                                     decorate={decorate}
