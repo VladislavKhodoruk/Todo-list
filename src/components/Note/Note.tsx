@@ -161,6 +161,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                             type='text'
                             className='note-bottom-content-title-input'
                             value={titleValue}
+                            maxLength={20}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitleValue(e.target.value)} />
                         <div onFocus={() => setInputOnFocus(true)} onBlur={() => setInputOnFocus(false)} className={classNames('note-bottom-content-text-input', { 'error': error })}>
                             <Slate

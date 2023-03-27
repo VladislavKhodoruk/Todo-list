@@ -216,3 +216,17 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  .note {
+    height: 19rem;
+    width: 19rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .note {
+    height: 17rem;
+    width: 95%;
+  }
+}

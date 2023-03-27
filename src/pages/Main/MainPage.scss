@@ -50,3 +50,22 @@
     padding-bottom: 0.5rem;
   }
 }
+
+@media (max-width: 992px) {
+  .main {
+    .notes {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 0.9rem;
+      grid-column-gap: 0rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+    .notes {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
