@@ -21,6 +21,7 @@
       min-width: 3rem;
       border-radius: 50%;
       background-color: $blue;
+      cursor: pointer;
 
       &-icon {
         height: 1.125rem;
@@ -46,6 +47,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 1.3rem;
     grid-column-gap: 0.5rem;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.5rem;
   }
 }

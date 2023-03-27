@@ -85,6 +85,8 @@
     &-button {
       @include center;
       background: none;
+      cursor: pointer;
+
       &-icon {
         height: 2rem;
         width: 2rem;

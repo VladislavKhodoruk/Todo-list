@@ -49,14 +49,12 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
     const editor = useMemo(() => withReact(createEditor()), []);
 
     const saveNote = () => {
-        if (editMode && inputValue[0].children[0].text && titleValue) {
+        if (editMode) {
             props.noteEvent(NoteEventTypes.Edit, props.note.id, inputValue[0].children[0].text, titleValue);
             setEditMode(false);
         }
         else { //createMode
-            if (inputValue[0].children[0].text) {
-                props.noteEvent(NoteEventTypes.Create, props.note.id, inputValue[0].children[0].text, titleValue, props.note.date);
-            }
+            props.noteEvent(NoteEventTypes.Create, props.note.id, inputValue[0].children[0].text, titleValue, props.note.date);
         }
     }
 
@@ -94,7 +92,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
                             <Tooltip title={editMode ? 'finish editing' : 'finish creating'} placement="top">
                                 <button
                                     type='button'
-                                    className={classNames('note-top-buttons-item note-top-buttons-item-done', 'active', { 'inactive': !(inputValue[0].children[0].text && titleValue) })}
+                                    className={classNames('note-top-buttons-item note-top-buttons-item-done', 'active', { 'inactive': !(inputValue[0].children[0].text) })}
                                     onClick={() => saveNote()}
                                 >
                                     <Icon className={classNames('note-icon')} icon="material-symbols:done-rounded" />
