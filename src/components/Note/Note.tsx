@@ -192,7 +192,7 @@ export const Note = (props: { note: NoteInterface, createMode?: boolean, noteEve
             <div className='note-bottom-tags'>
                 <hr />
                 <div className='note-bottom-tags-container'>
-                    {props.note.tags.sort().map((tag) => <Tag tag={tag} />)}
+                    {props.note.tags.sort().map((tag) => <Tag tag={tag} key={tag} />)}
                 </div>
             </div>
         </div >

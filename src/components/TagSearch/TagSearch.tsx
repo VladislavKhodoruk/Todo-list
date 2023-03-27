@@ -62,7 +62,7 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
                     onClick={() => setShowMenu(true)}
                 ></input>
                 {selectedTags.length > 0 && <div className='tag-search-input-container-tags-wrapper'>
-                    <div className='tag-search-input-container-tags'> {selectedTags.map((tag) => <Tag tag={tag} withActions={true} unPin={unPin} />)}</div>
+                    <div className='tag-search-input-container-tags'> {selectedTags.map((tag) => <Tag tag={tag} key={tag} withActions={true} unPin={unPin} />)}</div>
                 </div>}
                 <button type='button' className='tag-search-input-container-button' onClick={() => {
                     setShowMenu(!showMenu)
@@ -71,7 +71,7 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
                 </button>
             </div>
             {showMenu && <div ref={tagsWrapper} className='tags-wrapper'><div className='tag-search-tags'>
-                {tags.map((tag) => <Tag tag={tag} withActions={true} pin={pin} />)}
+                {tags.map((tag) => <Tag tag={tag} key={tag} withActions={true} pin={pin} />)}
             </div></div>}
         </div>
     )
