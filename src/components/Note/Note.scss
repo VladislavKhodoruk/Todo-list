@@ -221,6 +221,14 @@
   .note {
     height: 19rem;
     width: 19rem;
+
+    &-bottom-content-text {
+      max-height: 9.9rem;
+
+      &-input {
+        height: 9.9rem;
+      }
+    }
   }
 }
 
@@ -228,5 +236,13 @@
   .note {
     height: 17rem;
     width: 95%;
+
+    &-bottom-content-text {
+      max-height: 7.9rem;
+
+      &-input {
+        height: 7.9rem;
+      }
+    }
   }
 }

@@ -9,3 +9,9 @@
     width: 100%;
   }
 }
+
+@media (max-width: 576px) {
+  .layout-main {
+    height: 77%;
+  }
+}
