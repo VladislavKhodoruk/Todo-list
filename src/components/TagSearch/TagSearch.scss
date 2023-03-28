@@ -72,7 +72,7 @@
       height: 100%;
       width: 50%;
       display: flex;
-      padding: 0.3rem 2rem 0.3rem 0.3rem;
+      padding: 0.3rem 1.6rem 0.3rem 0.3rem;
     }
 
     &-tags {
@@ -87,9 +87,18 @@
 
     &-close-button {
       @include center;
+      width: 1.5rem;
+      height: 1.5rem;
       background: none;
       position: absolute;
-      right: 2%;
+      right: 1%;
+      cursor: pointer;
+
+      &:hover {
+        * {
+          fill: $light-black;
+        }
+      }
 
       &-icon {
         width: 0.7rem;
@@ -97,12 +106,6 @@
 
         * {
           fill: $grey;
-        }
-
-        &:hover {
-          * {
-            fill: $light-black;
-          }
         }
       }
 
