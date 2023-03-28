@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 import './Tag.scss';
 
-export const Tag = (props: { tag: string, withActions?: boolean, unPin?: (tag: string) => void, pin?: (tag: string) => void }) => {
+export const Tag = (props: { tag: string, withActions?: boolean, highlighted?: boolean, unPin?: (tag: string) => void, pin?: (tag: string) => void }) => {
     return (
         <Tooltip title={props.tag.charAt(0).toUpperCase() + props.tag.slice(1)} placement='bottom'>{props.withActions ? <div
             onClick={() => {
@@ -12,7 +12,7 @@ export const Tag = (props: { tag: string, withActions?: boolean, unPin?: (tag: s
                     props.pin!(props.tag)!
                 }
             }}
-            className={classNames('tag', 'with-close-button')}
+            className={classNames('tag', 'with-close-button', { 'tag-highlighted': !!props.highlighted })}
         >
             <p>{props.tag}</p>
             {props.unPin && <button type='button'

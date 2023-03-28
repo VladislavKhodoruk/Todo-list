@@ -17,6 +17,10 @@
   text-transform: uppercase;
   text-align: center;
 
+  &.tag-highlighted {
+    background-color: $orange-light;
+  }
+
   &.with-close-button {
     max-width: 5.9rem;
   }

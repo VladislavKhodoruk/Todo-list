@@ -79,7 +79,12 @@ export const TagSearch = (props: { tags: string[], tagsSelected?: (selectedTags:
                 </button>
             </div>
             {showMenu && <div ref={tagsWrapper} className='tags-wrapper'><div className='tag-search-tags'>
-                {tags.map((tag) => <Tag tag={tag} key={tag} withActions={true} pin={pin} />)}
+                {tags.map((tag) =>
+                    selectedTags.includes(tag) ?
+                        <Tag tag={tag} key={tag} highlighted={true} withActions={true} pin={pin} />
+                        :
+                        <Tag tag={tag} key={tag} withActions={true} pin={pin} />
+                )}
             </div></div>}
         </div>
     )

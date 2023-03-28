@@ -14,7 +14,7 @@
     height: 3rem;
     width: 100%;
     padding: 0 1.1rem;
-    box-shadow: $note-shadow;
+    box-shadow: $grey-shadow;
     border-radius: 0.3rem;
     background-color: $white;
     font: $font-m;
@@ -42,7 +42,7 @@
       width: 100%;
       font: $font-m;
       color: $grey;
-      caret-color: $note-shadow;
+      caret-color: $orange;
       outline: none;
       border: none;
       transition: 0.3s;
@@ -120,7 +120,7 @@
     top: 101%;
     padding: 1rem;
     background: $white;
-    box-shadow: $note-shadow;
+    box-shadow: $grey-shadow;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0.3rem;
