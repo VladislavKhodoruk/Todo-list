@@ -19,9 +19,9 @@ export const MainPage = () => {
     const notesContainer = useRef<HTMLDivElement>(document.createElement('div'));
 
     useEffect(() => {
-        if (!JSON.parse(localStorage.getItem('notes')!)) {
+        if (!(JSON.parse(localStorage.getItem('notes')!) && JSON.parse(localStorage.getItem('notes')!))) {
             localStorage.setItem('notes', JSON.stringify(data.notes));
-            localStorage.setItem('tags', JSON.stringify(data.tags));
+            localStorage.setItem('tags', JSON.stringify(findTags(JSON.parse(localStorage.getItem('notes')!).map((note: NoteInterface) => note.description).join(' '))));
             setNotes(JSON.parse(localStorage.getItem('notes')!));
             setTags(JSON.parse(localStorage.getItem('tags')!));
         }
